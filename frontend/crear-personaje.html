@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life RPG — Crea tu Personaje</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="crear-personaje.css">
+</head>
+<body class="creator-body">
+
+  <div class="creator-container">
+
+    <header class="creator-header">
+      <h1>⚔ LIFE RPG ⚔</h1>
+      <p>CREA TU AVENTURERO</p>
+    </header>
+
+    <!-- PREVIEW DEL PERSONAJE -->
+    <div class="preview-section">
+      <canvas id="preview-canvas" width="200" height="220"></canvas>
+      <div class="preview-info">
+        <div class="preview-name" id="preview-name">Aventurero</div>
+        <div class="preview-class" id="preview-class">Elige tu clase</div>
+        <div class="preview-stats" id="preview-stats"></div>
+      </div>
+    </div>
+
+    <!-- NOMBRE -->
+    <div class="creator-section">
+      <h3 class="section-title">✏ Nombre</h3>
+      <input type="text" id="input-nombre" class="creator-input"
+             placeholder="Escribe tu nombre de aventurero..."
+             maxlength="20" oninput="actualizarPreview()">
+    </div>
+
+    <!-- RAZA -->
+    <div class="creator-section">
+      <h3 class="section-title">🧬 Raza</h3>
+      <div class="opciones-grid" id="razas-grid"></div>
+    </div>
+
+    <!-- CLASE -->
+    <div class="creator-section">
+      <h3 class="section-title">⚔ Clase</h3>
+      <div class="opciones-grid" id="clases-grid"></div>
+    </div>
+
+    <!-- COLOR DE ROPA -->
+    <div class="creator-section">
+      <h3 class="section-title">🎨 Color de ropa</h3>
+      <div class="colores-grid" id="colores-grid"></div>
+    </div>
+
+    <!-- ARMA -->
+    <div class="creator-section">
+      <h3 class="section-title">🗡 Arma principal</h3>
+      <div class="opciones-grid" id="armas-grid"></div>
+    </div>
+
+    <!-- BOTÓN COMENZAR -->
+    <button class="btn-comenzar" id="btn-comenzar" onclick="comenzarAventura()" disabled>
+      ⚔ COMENZAR AVENTURA
+    </button>
+
+  </div>
+
+  <script src="personaje.js"></script>
+  <script src="crear-personaje.js"></script>
+</body>
+</html>

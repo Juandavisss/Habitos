@@ -1,0 +1,200 @@
+/* ── CREATOR BODY ── */
+.creator-body {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.creator-container {
+  width: 100%;
+  max-width: 700px;
+}
+
+.creator-header {
+  text-align: center;
+  padding: 20px 0 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.creator-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(240,192,64,.4);
+}
+
+.creator-header p {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  margin-top: 4px;
+}
+
+/* ── PREVIEW ── */
+.preview-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: var(--bg2);
+  border: 1px solid var(--gold2);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+#preview-canvas {
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg3);
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+
+.preview-info { flex: 1; }
+
+.preview-name {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.preview-class {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.preview-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.preview-stat {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.preview-stat span {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ── SECTIONS ── */
+.creator-section {
+  margin-bottom: 18px;
+}
+
+/* ── INPUT NOMBRE ── */
+.creator-input {
+  width: 100%;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.creator-input:focus { border-color: var(--gold2); }
+.creator-input::placeholder { color: var(--muted); font-family: 'Inter', sans-serif; }
+
+/* ── OPCIONES GRID ── */
+.opciones-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media(max-width:500px) { .opciones-grid { grid-template-columns: repeat(2,1fr); } }
+
+.opcion-item {
+  background: var(--bg2);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.opcion-item:hover { border-color: var(--gold2); }
+
+.opcion-item.selected {
+  border-color: var(--gold);
+  background: rgba(240,192,64,.1);
+  box-shadow: 0 0 10px rgba(240,192,64,.2);
+}
+
+.opcion-emoji { font-size: 26px; display: block; margin-bottom: 4px; }
+.opcion-nombre { font-size: 11px; font-weight: 600; color: var(--text); display: block; }
+.opcion-desc   { font-size: 9px;  color: var(--muted); display: block; margin-top: 2px; }
+
+/* ── COLORES ── */
+.colores-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-item {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.color-item:hover   { transform: scale(1.15); }
+.color-item.selected {
+  border-color: var(--gold);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(240,192,64,.4);
+}
+
+/* ── BOTÓN COMENZAR ── */
+.btn-comenzar {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #c89820, #f0c040);
+  color: #0a0a0f;
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .2s;
+  margin-top: 10px;
+  text-shadow: none;
+}
+
+.btn-comenzar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240,192,64,.4);
+}
+
+.btn-comenzar:disabled {
+  opacity: .4;
+  cursor: default;
+  background: var(--border);
+  color: var(--muted);
+}

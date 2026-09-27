@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life RPG</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  if (!localStorage.getItem('personaje-creado')) {
+    window.location.href = 'crear-personaje.html';
+  }
+</script>
+</head>
+<body>
+
+  <header>
+    <h1>⚔ LIFE RPG ⚔</h1>
+    <p id="fecha"></p>
+  </header>
+
+    <!-- BANNER DE BATALLA -->
+  <section class="battle-section">
+    <canvas id="battle-canvas"></canvas>
+    <div class="zone-title" id="zone-title">CIUDAD DE ORIGEN</div>
+  </section>
+
+  <!-- PERSONAJE -->
+  <section class="personaje-card">
+    <div class="avatar" id="avatar">🧙</div>
+    <div class="personaje-info">
+      <h2 id="nombre">Aventurero</h2>
+      <p id="clase">★ Iniciado ★</p>
+
+      <div class="barra-wrap">
+        <div class="barra-label"><span>❤ HP</span><span id="hp-label">100/100</span></div>
+        <div class="barra-track"><div class="barra-fill barra-hp" id="hp-bar"></div></div>
+      </div>
+
+      <div class="barra-wrap">
+        <div class="barra-label"><span>⚡ XP</span><span id="xp-label">0/100</span></div>
+        <div class="barra-track"><div class="barra-fill barra-xp" id="xp-bar"></div></div>
+      </div>
+
+      <div class="barra-wrap">
+        <div class="barra-label"><span>🌿 Stamina</span><span id="stamina-label">50/50</span></div>
+        <div class="barra-track"><div class="barra-fill barra-stamina" id="stamina-bar"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-grid">
+    <div class="stat-mini"><span class="val" id="stat-nivel">1</span><span class="lbl">Nivel</span></div>
+    <div class="stat-mini"><span class="val" id="stat-fuerza">8</span><span class="lbl">Fuerza</span></div>
+    <div class="stat-mini"><span class="val" id="stat-oro">0</span><span class="lbl">Oro</span></div>
+    <div class="stat-mini"><span class="val" id="stat-racha">0</span><span class="lbl">Racha</span></div>
+    <div class="stat-mini"><span class="val" id="stat-kills">0</span><span class="lbl">Kills</span></div>
+    <div class="stat-mini"><span class="val" id="stat-boss">0</span><span class="lbl">Boss</span></div>
+  </section>
+
+  <!-- MISIONES -->
+  <section>
+    <h3 class="section-title">📜 Misiones del Día</h3>
+    <div id="misiones-lista"></div>
+    <button class="btn-reset" onclick="resetDia()">↺ Nuevo día</button>
+  </section>
+
+  <!-- INVENTARIO -->
+  <section>
+    <h3 class="section-title">🛡 Inventario</h3>
+    <div id="inventario-grid"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
